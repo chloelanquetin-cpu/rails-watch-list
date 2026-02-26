@@ -1,0 +1,11 @@
+<div class="container py-5">
+  <h1>Create a new list</h1>
+
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name, placeholder: "Ex: Top 10 Horror Movies" %>
+    <%= f.button :submit, "Create List", class: "btn btn-primary" %>
+  <% end %>
+
+  <hr>
+  <%= link_to "Back to all lists", lists_path, class: "btn btn-secondary" %>
+</div>
