@@ -18,12 +18,22 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "images.jpeg", width: 40 %>
+  <% end %>
+
+  <div class="navbar-nav ms-auto flex-row">
+    <%= link_to "My lists", lists_path, class: "nav-link px-3" %>
+    <%= link_to "New list", new_list_path, class: "nav-link" %>
+  </div>
+</nav>
+
+<%= yield %>
   </body>
 </html>

@@ -3,6 +3,7 @@ before_action :set_list, only: [ :show ]
 
   def index
     @lists = List.all
+    @movies = Movie.all
   end
 
   def show
@@ -34,6 +35,6 @@ before_action :set_list, only: [ :show ]
   end
 
   def list_params
-  params.require(:list).permit(:name)
+  params.require(:list).permit(:name, :photo)
   end
 end
